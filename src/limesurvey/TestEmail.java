@@ -75,7 +75,7 @@ public class TestEmail {
                 entity = response.getEntity();
                 sessionKey = parse(EntityUtils.toString(entity));
 
-                // Find participent with the params recived (pre-added to the participent list)
+                // Find participant with the params received (user pre added to the participants list)
                 String details = "'email':'" + email + "','firstname':'"
                         + firstName + "','lastname':'" + lastName + "'";
 
@@ -89,7 +89,7 @@ public class TestEmail {
                         + " \"" + details + "\" ], \"id\": 1}"));
                 response = client.execute(post);
 
-                // If response is ok, I excpect to recive 1 result
+                // If response is ok, I expect to receive 1 result
                 // Parsing the result to array and getting the token field
                 // Using the token field in the method remind_participants to send email
                 if (response.getStatusLine().getStatusCode() == 200) {
